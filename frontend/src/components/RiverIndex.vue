@@ -6,13 +6,14 @@
 			img(src="/img/icons/redHeart.gif")
 			|Если не зашло, то поставьте
 			img(src="/img/icons/angryFace.gif")
-	.btnBlue(@click="mainStore.loadVideo()" v-if="!mainStore.spinner")
+	.btnBlue(@click="mainStore.loadVideo()" v-if="!(mainStore.getListVideo.length === 0 && !mainStore.spinner)")
 		span Следующие 10 рекомендаций
 		img(src="/img/icons/arrowRight.svg")
 .listVideo
 	RiverItemVideo(v-for="item of mainStore.getListVideo" :video="item"
 		@openModal="$_river_index_openModal($event,item.id)")
-.footer(v-if="!mainStore.spinner")
+.noData(v-if="mainStore.getListVideo.length === 0 && !mainStore.spinner") Видимо что то пошло не так, обновите страницу и попробуйте ещё раз
+.footer(v-if="!(mainStore.getListVideo.length === 0 && !mainStore.spinner)")
 	.btnBlue(@click="mainStore.loadVideo()")
 		span Следующие 10 рекомендаций
 		img(src="/img/icons/arrowRight.svg")
@@ -121,6 +122,17 @@ transition(name="fadeAll" mode="out-in")
 	.footer{
 		display: none;
 	}
+	.noData{
+		height: 40vh;
+		font-size: 40px;
+		font-weight: 600;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: 700px;
+		margin: auto;
+	}
 	@media (max-width: 1600px) {
 		.footer{
 			display: block;
@@ -150,6 +162,9 @@ transition(name="fadeAll" mode="out-in")
 		.btnBlue{
 			padding: 0 16px;
 			font-size: 14px;
+		}
+		.noData{
+			font-size: 20px;
 		}
 	}
 </style>
