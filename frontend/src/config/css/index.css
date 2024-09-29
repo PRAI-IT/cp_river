@@ -1,0 +1,41 @@
+@font-face {
+	font-family: Monteserrat;
+	src:
+		url('@/config/css/fonts/Montserrat-VariableFont_wght.woff2') format('woff2'),
+		url('@/config/css/fonts/Montserrat-VariableFont_wght.woff') format('woff'),
+		url('@/config/css/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+body{
+	font-family: 'Monteserrat';
+	background-color: #0B101B;
+	background-image: url('./img/bg.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #ffffff;
+	min-height: 100vh;
+	padding: 30px 50px;
+}
+particle {
+	position: fixed;
+	left: 0;
+	top: 0;
+	border-radius: 50%;
+	pointer-events: none;
+	opacity: 0;
+	z-index: 9999999;
+}
+.customScroll{
+	scrollbar-width: 5px;
+	scrollbar-base-color: #ffffff;
+	overflow: auto;
+}
+.customScroll::-webkit-scrollbar, .customScroll::-webkit-scrollbar, .customScroll::-webkit-scrollbar {width: 5px;}
+.customScroll::-webkit-scrollbar-thumb, .customScroll::-webkit-scrollbar-thumb, .customScroll::-webkit-scrollbar-thumb{background: #ffffff;border-radius: 0;}
+.customScroll::-webkit-scrollbar-thumb:hover, .customScroll::-webkit-scrollbar-thumb:hover, .customScroll::-webkit-scrollbar-thumb:hover{background: #ffffff;}
+.customScroll::-webkit-scrollbar-thumb:focus, .customScroll::-webkit-scrollbar-thumb:focus, .customScroll::-webkit-scrollbar-thumb:focus{background: #ffffff;}
+@media (max-width: 576px) {
+	body{
+		padding: 15px;
+	}
+}

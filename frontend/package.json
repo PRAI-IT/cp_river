@@ -1,0 +1,22 @@
+{
+  "name": "river_front",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "pinia": "^2.2.2",
+    "pug": "^3.0.3",
+    "vue": "^3.3.4",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.4.0",
+    "sass": "^1.79.3",
+    "vite": "^4.4.11"
+  }
+}
